@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+
+proc login { mgmtPass } {
+    expect "word: "
+    send "$mgmtPass\r"
+
+    expect "SWITCH>"
+    send "en\r"
+
+	return 0   
+}
+
+proc logout { } {
+	expect "SWITCH#"
+	send "exit\r"
+	
+	return 0
+}

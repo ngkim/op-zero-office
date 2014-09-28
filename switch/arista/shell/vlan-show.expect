@@ -1,0 +1,25 @@
+#!/usr/bin/expect -f
+
+set timeout 20
+
+source "/root/admin/switch/arista/expect/login.expect"
+
+set mgmtIp [lindex $argv 0]
+set mgmtUser [lindex $argv 1]
+set mgmtPass [lindex $argv 2]
+set vlanId [lindex $argv 3]
+
+spawn ssh $mgmtUser@$mgmtIp 
+
+set rez [login $mgmtPass]
+if { $rez == 0 } {
+	expect "SWITCH#" 
+	send "sh vlan $vlanId\r"
+
+	expect "SWITCH#" 
+	send "exit\r"
+}
+
+interact
+
+

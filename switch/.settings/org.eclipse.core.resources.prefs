@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//arista/python-rpc/arista_rpc.py=utf-8
+encoding//arista/python-rpc/baremetal-test/config_diff.py=utf-8
+encoding//arista/python-rpc/config_diff.py=utf-8
+encoding//arista/python-rpc/config_zero_office.py=utf-8
+encoding//arista/python-rpc/failover/check_status.py=utf-8
+encoding//arista/python-rpc/failover/failover.py=utf-8
+encoding//arista/python-rpc/migration/migration.py=utf-8
+encoding//arista/python-rpc/show_ports.py=utf-8
+encoding//arista/python-rpc/test/test-config-parser.py=utf-8
+encoding//arista/python-rpc/unset_access_vlan.py=utf-8
+encoding//arista/python-rpc/unset_trunk.py=utf-8
+encoding//arista/python-rpc/utils.py=utf-8

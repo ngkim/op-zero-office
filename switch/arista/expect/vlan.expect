@@ -1,0 +1,46 @@
+#!/usr/bin/expect -f
+
+proc conf_t_in { } {
+	expect "SWITCH#" 
+	send "conf t\r"
+}
+
+proc conf_t_out { } {
+	expect "SWITCH(config)#" 
+	send "exit\r"
+}
+
+proc vlan_create { vlanId } {
+    conf_t_in
+
+	expect "SWITCH(config)#" 
+	send "vlan $vlanId\r"
+
+	expect "SWITCH(config-vlan-$vlanId)#" 
+	send "exit\r"
+
+    conf_t_out
+
+	return 0   
+}
+
+proc vlan_delete { vlanId } {
+    conf_t_in
+
+	expect "SWITCH(config)#" 
+	send "no vlan $vlanId\r"
+
+	expect "SWITCH(config)#" 
+	send "exit\r"
+
+    conf_t_out
+
+	return 0   
+}
+
+proc vlan_show { vlanId } {
+	expect "SWITCH#" 
+	send "sh vlan $vlanId\r"
+
+	return 0   
+}
